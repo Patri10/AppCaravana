@@ -1,0 +1,96 @@
+<Window x:Class="AppCaravana.Views.ClienteFormWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Gestionar Cliente"
+        Height="600"
+        Width="500"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F6FA">
+
+        <Window.Resources>
+                <ResourceDictionary Source="../Resources/Styles.xaml"/>
+        </Window.Resources>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel Margin="30,25">
+
+                        <!-- HEADER -->
+                        <StackPanel Orientation="Vertical"
+                                        Margin="0,0,0,25">
+                                <TextBlock Text="👥 Gestionar Cliente"
+                                           FontSize="26"
+                                           FontWeight="Bold"
+                                           Foreground="#2C3E50"
+                                           Margin="0,0,0,8"/>
+                                <Border Height="3"
+                                                Background="#3498DB"
+                                                CornerRadius="2"
+                                                Width="60"
+                                                HorizontalAlignment="Left"/>
+                        </StackPanel>
+
+                        <!-- NOMBRE -->
+                        <Label Content="Nombre *"
+                               Style="{StaticResource ModernLabelStyle}"
+                               Margin="0,15,0,5"/>
+                        <TextBox x:Name="txtNombre"
+                                 Style="{StaticResource ModernTextBoxStyle}"
+                                 Margin="0,0,0,15"/>
+
+                        <!-- APELLIDO -->
+                        <Label Content="Apellido *"
+                               Style="{StaticResource ModernLabelStyle}"
+                               Margin="0,0,0,5"/>
+                        <TextBox x:Name="txtApellido"
+                                 Style="{StaticResource ModernTextBoxStyle}"
+                                 Margin="0,0,0,15"/>
+
+                        <!-- DNI -->
+                        <Label Content="DNI *"
+                               Style="{StaticResource ModernLabelStyle}"
+                               Margin="0,0,0,5"/>
+                        <TextBox x:Name="txtDNI"
+                                 Style="{StaticResource ModernTextBoxStyle}"
+                                 Margin="0,0,0,15"/>
+
+                        <!-- TELEFONO -->
+                        <Label Content="Teléfono"
+                               Style="{StaticResource ModernLabelStyle}"
+                               Margin="0,0,0,5"/>
+                        <TextBox x:Name="txtTelefono"
+                                 Style="{StaticResource ModernTextBoxStyle}"
+                                 Margin="0,0,0,15"/>
+
+                        <!-- EMAIL -->
+                        <Label Content="Email"
+                               Style="{StaticResource ModernLabelStyle}"
+                               Margin="0,0,0,5"/>
+                        <TextBox x:Name="txtEmail"
+                                 Style="{StaticResource ModernTextBoxStyle}"
+                                 Margin="0,0,0,25"/>
+
+                        <!-- BOTONES -->
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center"
+                                    Margin="0,10,0,0">
+
+                                <Button Content="✅ Guardar"
+                                        Width="160"
+                                        Height="48"
+                                        Margin="5,0"
+                                        Click="BtnGuardar_Click"
+                                        Style="{StaticResource SuccessButtonStyle}"/>
+
+                                <Button Content="❌ Cancelar"
+                                        Width="160"
+                                        Height="48"
+                                        Margin="5,0"
+                                        Click="BtnCancelar_Click"
+                                        Style="{StaticResource DangerButtonStyle}"/>
+
+                        </StackPanel>
+
+                </StackPanel>
+        </ScrollViewer>
+
+</Window>

@@ -1,0 +1,31 @@
+# Build outputs
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.cache
+
+# Local database and journals
+caravanas.db
+caravanas.db-shm
+caravanas.db-wal
+*.sqlite
+*.sqlite-journal
+
+# Reports and generated artifacts
+reports_output/
+Reports/*.xlsx
+
+# Python cache (report scripts)
+__pycache__/
+*.pyc
+
+# Google Drive credentials and tokens
+credentials.json
+client_secret*.json
+google_drive_token/
+
+# Logs and temp
+*.log
+*.tmp

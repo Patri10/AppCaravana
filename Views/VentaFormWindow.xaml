@@ -1,0 +1,117 @@
+<Window x:Class="AppCaravana.Views.VentaFormWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Venta"
+        Height="600"
+        Width="650"
+        WindowStartupLocation="CenterScreen">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="20">
+
+            <TextBlock Text="Venta"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       Margin="0 0 0 20"/>
+
+            <!-- CLIENTE -->
+            <Label Content="Cliente"
+                    FontSize="16"/>
+            <ComboBox x:Name="cmbCliente"
+                      DisplayMemberPath="Apellido"
+                      SelectedValuePath="Id"
+                      Height="40"
+                      FontSize="14"/>
+
+                        <!-- CARAVANAS (Múltiples) -->
+                        <Label Content="Caravanas"
+                                        FontSize="16"/>
+                        <TextBlock Text="Selecciona una o varias caravanas para esta venta"
+                                           Foreground="#7F8C8D"
+                                           Margin="0 0 0 5"/>
+                        <Grid>
+                                <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Disponibles -->
+                                <StackPanel Grid.Column="0">
+                                        <TextBlock Text="Disponibles"
+                                                           FontWeight="Bold"
+                                                           Margin="0 0 0 5"/>
+                                        <ListBox x:Name="lstCaravanasDisponibles"
+                                                         DisplayMemberPath="Serie"
+                                                         SelectedValuePath="Id"
+                                                         SelectionMode="Extended"
+                                                         Height="180"
+                                                         FontSize="13"
+                                                         SelectionChanged="lstCaravanasDisponibles_SelectionChanged"/>
+                                </StackPanel>
+
+                                <!-- Seleccionadas -->
+                                <StackPanel Grid.Column="1" Margin="10 0 0 0">
+                                        <TextBlock Text="Seleccionadas"
+                                                           FontWeight="Bold"
+                                                           Margin="0 0 0 5"/>
+                                        <ListBox x:Name="lstCaravanasSeleccionadas"
+                                                         DisplayMemberPath="Serie"
+                                                         SelectedValuePath="Id"
+                                                         Height="180"
+                                                         FontSize="13"
+                                                         SelectionChanged="lstCaravanasSeleccionadas_SelectionChanged"/>
+                                </StackPanel>
+                        </Grid>
+
+                        <StackPanel Orientation="Horizontal" Margin="0 8 0 0">
+                                <Button Content="➕ Agregar"
+                                                Width="120"
+                                                Height="35"
+                                                Margin="0 0 8 0"
+                                                Click="BtnAgregarCaravanas_Click"/>
+                                <Button Content="➖ Quitar"
+                                                Width="120"
+                                                Height="35"
+                                                Click="BtnQuitarCaravanas_Click"/>
+                        </StackPanel>
+
+            <!-- FECHA -->
+            <Label Content="Fecha"
+                    FontSize="16"/>
+            <DatePicker x:Name="dpFecha"
+                    Height="40"
+                    FontSize="14"
+                    Padding="8"/>
+
+            <!-- IMPORTE -->
+            <Label Content="Importe total"
+                    FontSize="16"/>
+            <TextBox x:Name="txtImporte"
+                    Height="40"
+                    FontSize="14"
+                    Padding="8"
+                    IsReadOnly="True"
+                    Background="#F2F2F2"/>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="0 20 0 0">
+
+                <Button Content="Guardar"
+                        Width="140"
+                        Height="45"
+                        Margin="5"
+                        Click="BtnGuardar_Click"/>
+
+                <Button Content="Cancelar"
+                        Width="140"
+                        Height="45"
+                        Margin="5"
+                        Click="BtnCancelar_Click"/>
+
+            </StackPanel>
+
+        </StackPanel>
+    </ScrollViewer>
+
+</Window>

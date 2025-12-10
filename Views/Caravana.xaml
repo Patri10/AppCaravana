@@ -1,0 +1,160 @@
+<UserControl x:Class="AppCaravana.Views.CaravanasView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Background="#F5F6FA">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="../Resources/Styles.xaml"/>
+    </UserControl.Resources>
+
+    <Grid Margin="0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- HEADER -->
+        <Border Background="White"
+                Padding="25,20"
+                BorderThickness="0,0,0,1"
+                BorderBrush="#E0E0E0">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="🚐 Gestión de Caravanas"
+                           FontSize="28"
+                           FontWeight="Bold"
+                           Foreground="#2C3E50"
+                           Margin="0,0,0,10"/>
+                <TextBlock Text="Administra tu inventario de caravanas disponibles"
+                           FontSize="13"
+                           Foreground="#7F8C8D"/>
+            </StackPanel>
+        </Border>
+
+        <!-- BOTONES -->
+        <Border Grid.Row="1"
+                Background="White"
+                Padding="25,15"
+                BorderThickness="0,0,0,1"
+                BorderBrush="#E0E0E0">
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Center">
+
+                <Button Content="➕ Nueva Caravana"
+                        Width="180"
+                        Height="45"
+                        Margin="0,0,10,0"
+                        Click="BtnNuevaCaravana_Click"
+                        Style="{StaticResource PrimaryButtonStyle}"/>
+
+                <Button Content="🔄 Refrescar"
+                        Width="150"
+                        Height="45"
+                        Click="BtnRefrescar_Click"
+                        Style="{StaticResource PrimaryButtonStyle}"/>
+            </StackPanel>
+        </Border>
+
+        <!-- TABLA -->
+        <Border Grid.Row="2"
+                Margin="25,15"
+                Background="White"
+                CornerRadius="8"
+                BorderThickness="1"
+                BorderBrush="#E0E0E0">
+            <DataGrid x:Name="dgCaravanas"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      IsReadOnly="True"
+                      RowHeight="45"
+                      ColumnHeaderHeight="50"
+                      FontSize="13"
+                      ColumnWidth="*"
+                      SelectionMode="Single"
+                      Style="{StaticResource ModernDataGridStyle}">
+
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="{x:Type DataGridColumnHeader}"
+                           BasedOn="{StaticResource ModernDataGridColumnHeaderStyle}"/>
+                </DataGrid.ColumnHeaderStyle>
+
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn Header="Serie"
+                                        Binding="{Binding Serie}"
+                                        Width="120"/>
+
+                    <DataGridTextColumn Header="Marca"
+                                        Binding="{Binding Marca}"
+                                        Width="120"/>
+
+                    <DataGridTextColumn Header="Modelo"
+                                        Binding="{Binding Modelo}"
+                                        Width="120"/>
+
+                    <DataGridTextColumn Header="Año"
+                                        Binding="{Binding Año}"
+                                        Width="70"/>
+
+                    <DataGridTextColumn Header="Matrícula"
+                                        Binding="{Binding Matricula}"
+                                        Width="120"/>
+
+                    <DataGridTextColumn Header="N° SENASA"
+                                        Binding="{Binding NumeroSenasa}"
+                                        Width="140"/>
+
+                    <DataGridTextColumn Header="Tipo"
+                                        Binding="{Binding Tipo}"
+                                        Width="120"/>
+
+                    <DataGridTextColumn Header="Precio"
+                                        Binding="{Binding Precio, StringFormat=C}"
+                                        Width="120"/>
+
+                    <DataGridTextColumn Header="Disponible"
+                                        Binding="{Binding Disponible}"
+                                        Width="100"/>
+
+                    <!-- COLUMNA ACCIONES -->
+                    <DataGridTemplateColumn Header="Acciones"
+                                            Width="200">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center">
+
+                                    <Button Content="✏️ Editar"
+                                            Width="85"
+                                            Height="32"
+                                            Margin="3"
+                                            Click="BtnEditar_Click"
+                                            Style="{StaticResource PrimaryButtonStyle}"
+                                            FontSize="12"/>
+
+                                    <Button Content="🗑️ Eliminar"
+                                            Width="90"
+                                            Height="32"
+                                            Margin="3"
+                                            Click="BtnEliminar_Click"
+                                            Style="{StaticResource DangerButtonStyle}"
+                                            FontSize="12"/>
+
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+        </Border>
+
+    </Grid>
+
+</UserControl>

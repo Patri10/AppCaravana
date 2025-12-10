@@ -1,0 +1,126 @@
+<Window x:Class="AppCaravana.Views.CaravanaFormWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Caravana"
+        Height="600"
+        Width="500"
+        WindowStartupLocation="CenterScreen">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="20">
+
+            <TextBlock Text="Caravana"
+                       FontSize="28"
+                       FontWeight="Bold"
+                       Margin="0 0 0 20"/>
+
+            <!-- SERIE -->
+            <Label Content="Serie"
+                    FontSize="16"/>
+            <TextBox x:Name="txtSerie"
+                    Height="40"
+                    FontSize="14"
+                    Padding="8"/>
+
+            <!-- MARCA -->
+            <Label Content="Marca"
+                    FontSize="16"/>
+            <TextBox x:Name="txtMarca"
+                    Height="40"
+                    FontSize="14"
+                    Padding="8"/>
+
+            <!-- MODELO -->
+            <Label Content="Modelo"
+                    FontSize="16"/>
+            <TextBox x:Name="txtModelo"
+                    Height="40"
+                    FontSize="14"
+                    Padding="8"/>
+
+            <!-- AÑO -->
+            <Label Content="Año"
+                    FontSize="16"/>
+            <TextBox x:Name="txtAño"
+                    Height="40"
+                    FontSize="14"
+                    Padding="8"/>
+
+            <!-- MATRÍCULA -->
+            <Label Content="Matrícula"
+                    FontSize="16"/>
+            <TextBox x:Name="txtMatricula"
+                    Height="40"
+                    FontSize="14"
+                    Padding="8"/>
+
+            <!-- N° SENASA -->
+            <Label Content="Número SENASA"
+                    FontSize="16"/>
+            <TextBox x:Name="txtSenasa"
+                    Height="40"
+                    FontSize="14"
+                    Padding="8"/>
+
+            <!-- TIPO -->
+            <Label Content="Tipo"
+                    FontSize="16"/>
+            <TextBox x:Name="txtTipo"
+                    Height="40"
+                    FontSize="14"
+                    Padding="8"/>
+
+            <!-- PRECIO -->
+            <Label Content="Precio"
+                    FontSize="16"/>
+            <TextBox x:Name="txtPrecio"
+                    Height="40"
+                    FontSize="14"
+                    Padding="8"/>
+
+            <!-- DISPONIBLE -->
+            <CheckBox x:Name="chkDisponible"
+                    Content="Disponible"
+                    Margin="0 10 0 10"
+                    FontSize="14"/>
+
+            <!-- CARACTERISTICAS -->
+            <Label Content="Características"
+                    FontSize="16"/>
+            <TextBox x:Name="txtCaracteristicas"
+                     Height="90"
+                     FontSize="14"
+                     Padding="8"
+                     AcceptsReturn="True"
+                     TextWrapping="Wrap"/>
+
+            <!-- DESCRIPCION -->
+            <Label Content="Descripción"
+                    FontSize="16"/>
+            <TextBox x:Name="txtDescripcion"
+                     Height="90"
+                     FontSize="14"
+                     Padding="8"
+                     AcceptsReturn="True"
+                     TextWrapping="Wrap"/>
+
+            <!-- BOTONES -->
+            <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0 20 0 0">
+                <Button Content="Guardar"
+                        Width="140"
+                        Height="45"
+                        Margin="5"
+                        Click="BtnGuardar_Click"/>
+                <Button Content="Cancelar"
+                        Width="140"
+                        Height="45"
+                        Margin="5"
+                        Click="BtnCancelar_Click"/>
+            </StackPanel>
+
+        </StackPanel>
+    </ScrollViewer>
+
+</Window>
