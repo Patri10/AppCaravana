@@ -1,2 +1,0 @@
-# AppCaravana
-Caravan management application
