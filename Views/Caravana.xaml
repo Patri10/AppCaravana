@@ -116,9 +116,16 @@
                                         Binding="{Binding Precio, StringFormat=C}"
                                         Width="120"/>
 
-                    <DataGridTextColumn Header="Disponible"
-                                        Binding="{Binding Disponible}"
-                                        Width="100"/>
+                    <DataGridTemplateColumn Header="Disponible"
+                                            Width="100">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Disponible, Converter={StaticResource BoolToTextConverter}}"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
 
                     <!-- COLUMNA ACCIONES -->
                     <DataGridTemplateColumn Header="Acciones"
